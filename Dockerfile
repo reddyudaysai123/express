@@ -1,4 +1,6 @@
-FROM ubuntu-jdk11
-RUN 
+FROM node:14-alpine
+RUN  npm install
+WORKDIR /app
+COPY package*.json ./
 EXPOSE 3000
-CMD [""]
+CMD ["node", "index.js"]
