@@ -1,7 +1,6 @@
-FROM node:bullseye
-WORKDIR /app
-COPY package*.json ./
+FROM node:19
+RUN git clone https://github.com/expressjs/express.git
+WORKDIR /express
 RUN npm install
-COPY . .
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD ["node","examples/hello-world"]
